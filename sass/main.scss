@@ -64,66 +64,62 @@ body {
   }
 }
 
-.nav{
-    position: fixed;
-    top: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100%;
-    transform: translateX(100%);
-    transition: 0.5s cubic-bezier(0.65,0.05,0.36,1);
-    background-image: $blue-gradient-solid;
-    z-index: 100;
-    &--active{
-        transform: translateX(0);
-    }
+.nav {
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  transform: translateX(100%);
+  transition: 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+  background-image: $blue-gradient-solid;
+  z-index: 100;
+  &--active {
+    transform: translateX(0);
+  }
 
-    &__item{
-        position: relative;
-        display: block;
-        color: $pure-white;
-        margin: 0.5em 2em;
-        padding: 0.5em 0;
-        font-size: 2.8em;
-        text-decoration: none;
-        &::before{
-            position: absolute;
-            top: 0;
-            left: -20px;
-            width: 3px;
-            height: 100%;
-            transform: scaleY(0);
-            background-color: $pure-white;
-            transition: transform .3s;
-            content: '';
-        }
-        &:hover::before {
-            transform: scaleY(1);
-        }
+  &__item {
+    position: relative;
+    display: block;
+    color: $pure-white;
+    margin: 0.5em 2em;
+    padding: 0.5em 0;
+    font-size: 2.8em;
+    text-decoration: none;
+    &::before {
+      position: absolute;
+      top: 0;
+      left: -20px;
+      width: 3px;
+      height: 100%;
+      transform: scaleY(0);
+      background-color: $pure-white;
+      transition: transform 0.3s;
+      content: "";
     }
+    &:hover::before {
+      transform: scaleY(1);
+    }
+  }
 }
 
-@keyframes navIteamsAnimation{
-    from{
+@keyframes navItemsAnimation {
+  from {
     transform: translateX(200%);
-    }
-    to{
-        transform: translateX(0);
-    }
+  }
+  to {
+    transform: translateX(0);
+  }
 }
-.nav-items-animation{
-    animation:navItemsAnimation 1s both;
-    
-    
+.nav-items-animation {
+  animation: navItemsAnimation 1s both;
 }
-
 
 //header
 
 .header {
-  
   position: relative;
   display: flex;
   justify-content: center;
@@ -133,94 +129,403 @@ body {
   height: 75vh;
   text-align: center;
   color: $pure-white;
-  @include heroImage('../img/bora_640.jpg');
+  @include heroImage("../img/bora_640.jpg");
   background-attachment: scroll;
-  &__title{
-      font-family: 'Dancing Script', cursive;
-      font-size: 5rem;
-      font-weight: 300px;
+  &__title {
+    font-family: "Dancing Script", cursive;
+    font-size: 4.8rem;
+    font-weight: 300px;
   }
-  &__text{
-      font-size: 1.4rem;
+  &__text {
+    font-size: 1.4rem;
   }
-  &__btn{
-      margin-top: 2em;
-      padding: 0.8em 1.6em;
-      font-size: 1.4rem;
-      background: $pure-white;
-      border: none;
-      border-radius: 8px;
-      color: $dark;
-      text-decoration: none;
-      text-transform: uppercase;
-      cursor: pointer;
-      &::before {
-          background-color: lightblue;
-      }
+  &__btn {
+    margin-top: 2em;
+    padding: 0.8em 1.6em;
+    font-size: 1.4rem;
+    background: $pure-white;
+    border: none;
+    border-radius: 8px;
+    color: $dark;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    &::before {
+      background-color: lightblue;
+    }
   }
 }
 // Main
 //Dreams section
-.dreams__box{
+.dreams__box {
   display: flex;
   flex-direction: column;
   margin: 2em;
 }
-.dreams{
-  &__box{
+.dreams {
+  &__box {
     display: flex;
     flex-direction: column;
     margin: 2em;
   }
-  &__img{
-    margin: 1em;
+  &__img {
     width: 100%;
-   margin-bottom: 1em;
-   
+    margin-bottom: 1em;
   }
-  &__title{
-    margin-bottom: .5em;
-    margin: 1em;
+  &__title {
+    margin-bottom: 0.5em;
   }
-  &__text{
+  &__text {
     font-size: 1.4em;
-    margin: 1em;
   }
 }
 
+//HERO IMG
+.hero-img {
+  position: relative;
+  padding: 10em 2em;
+  @include heroImage("../img/polynesia_640.jpg");
+  text-align: center;
+  color: $pure-white;
+  overflow: hidden;
+  &__title {
+    font-family: "Dancing Script", cursive;
+    font-size: 4.8rem;
+    margin-bottom: 0.5em;
+  }
+  &__text {
+    padding: 1em 0;
+  }
+}
 
+//Island card
+.islands {
+  &__card {
+    position: relative;
+    margin: 1em 0;
+    height: 450px;
+    color: $pure-white;
+    text-align: center;
+    perspective: 1000px;
+    &:hover {
+      .islands__card-img {
+        transform: rotateY(-180deg);
+        opacity: 0;
+      }
+      .islands__card-info {
+        transform: rotateY(0);
+        opacity: 1;
+      }
+    }
+    &-img {
+      padding: 2em;
+      height: 100%;
+      border-radius: 8px;
+      background-size: cover;
+      transition: transform 1s, opacity 1s;
+
+      &--first {
+        background-image: $light-blue-gradient, url(../img/water_640.jpg);
+      }
+      &--second {
+        background-image: $blue-gradient, url(../img/boat_640.jpg);
+      }
+      &--third {
+        background-image: $purple-gradient, url(../img/hawaii_640.jpg);
+      }
+      &--title {
+        font-family: "Dancing Script", cursive;
+        font-size: 2.8rem;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 1.2em;
+      }
+      &-info {
+        position: absolute;
+        bottom: 30px;
+        right: 30px;
+        font-size: 1.8rem;
+        i {
+          margin-right: 0.3em;
+        }
+      }
+    }
+    &-info {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-image: $light-blue-gradient-solid;
+      border-radius: 8px;
+      opacity: 0;
+      transform: rotateY(180deg);
+      transition: transform 1s, opacity 1s;
+      &--title {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 1.2em;
+        font-family: "Dancing Script", cursive;
+        font-size: 2.8rem;
+      }
+      &-list {
+        margin: 0 auto;
+        width: 70%;
+        list-style: none;
+        &-item {
+          padding: 1em;
+          font-size: 1.4em;
+          border-bottom: 1px solid $light-white;
+          &:last-child {
+            border-bottom: none;
+          }
+        }
+      }
+      &-btn {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 2em;
+        padding: 1em;
+        border-radius: 8px;
+        width: 80%;
+        border: none;
+        background-color: $green-color;
+        cursor: pointer;
+        &::before {
+          background-color: $green-color-hover;
+        }
+      }
+    }
+  }
+}
+
+//Offers
+
+.offers {
+  position: relative;
+  @include heroImage("../img/maldives4_640.jpg");
+  overflow: hidden;
+  .section-heading {
+    color: $pure-white;
+  }
+  &__option {
+    margin: 1em 0;
+    box-shadow: 5px 5px 10px #2e2e2e;
+    background-color: $pure-white;
+    overflow: hidden;
+    &-img {
+      width: 100%;
+      transition: transform 0.3s;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+    &-info {
+      padding: 3em;
+      background-color: $pure-white;
+      
+    }
+    &-heading {
+      margin-bottom: 0.5em;
+      font-size: 2.4rem;
+      font-weight: 300px;
+    }
+    &-text {
+      margin-bottom: 0.5em;
+      font-size: 1.3rem;
+      color: $dark;
+    }
+    &-btn {
+      margin-top: 1em;
+      padding: 0.8em;
+      width: 100%;
+      color: $pure-white;
+      background-color: $main-color;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      &::before {
+        background-color: $secondary-color;
+      }
+    }
+  }
+}
 
 //==========
-//Media 
+//Media
 //==========
 
+@media (min-width: 576px) {
+  .dreams {
+    &__box {
+      flex-direction: row;
+      justify-content: space-between;
+      &-text {
+        width: 55%;
+        &--right {
+          text-align: right;
+        }
+      }
+      &-img {
+        width: 40%;
 
-@media (min-width: 768px){
-    .white-block{
-        height: 50px;
-        width: 45%;
+        &--right {
+          order: 1;
+        }
+      }
     }
-    .header{
-        &__title{
-            font-size: 6.6rem;
-        }
-        &__text{
-            font-size: 2.2rem;
-        }
-        &__btn{
-            font-size: 1.6rem;
-        }
+    &__img {
+      margin-bottom: 0;
+      max-height: 300px;
     }
+  }
+  .offers {
+    &__option {
+      display: flex;
+      margin: 2em 0;
+      width: 100%;
+      &-info{
+        width: 50%;
+        height: auto;
+
+      }
+      &-img {
+        width: 50%;
+        height: auto;
+        &--right {
+          order: 1;
+        }
+      }
+      &-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      &-heading {
+        margin-bottom: 0.5em;
+        font-size: 2.6em;
+      }
+      &-btn {
+        padding: 1em;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .white-block {
+    height: 50px;
+    width: 45%;
+  }
+  .header {
+    &__title {
+      font-size: 4.6rem;
+    }
+    &__text {
+      font-size: 2.2rem;
+    }
+    &__btn {
+      font-size: 1.6rem;
+    }
+  }
+  .dreams {
+    &__title {
+      font-size: 2.4rem;
+    }
+    &__text {
+      font-size: 1.8rem;
+    }
+  }
+  .hero-img {
+    padding: 30rem 2em;
+
+    hr {
+      margin: 0 auto;
+      width: 76%;
+    }
+    &__text {
+      font-size: 2.2rem;
+    }
+  }
+  .islands {
+    &__cards {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    &__card {
+      margin: 1em;
+      width: 45%;
+    }
+  }
 }
 @media (min-width: 992px) {
-.burger-btn{
+  .burger-btn {
     top: 50px;
     right: 50px;
-}
-.header {
+  }
+  .title {
     background-image: $blue-gradient url(/img/bora_1920.jpg);
-    &__title{
-        font-size: 7rem;
+    &__title {
+      font-size: 8rem;
     }
+  }
+  .nav {
+    &__item {
+      font-size: 4.4rem;
+    }
+  }
+  .dreams {
+    &__box {
+      margin: 5em 0em;
+      &-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        margin-bottom: 2.5em;
+      }
+    }
+    &__title {
+      font-size: 3.2rem;
+    }
+    &__text {
+      font-size: 1.8rem;
+    }
+  }
+  .hero-img {
+    padding: 40em 2em;
+    background-image: $blue-gradient, url("../img/polynesia_1920.jpg");
+    &__title {
+      font-size: 7.2rem;
+    }
+    hr {
+      width: 60%;
+      max-width: 900px;
+    }
+  }
+  .offers{
+    background-image: $blue-gradient url(../img/maldives4_1920.jpg);
+    &__option{
+      &-img{
+        object-fit: cover;
+        height: 300px;
+      }
+      &-text{
+        font-size: 1.5rem;
+      }
+    }
+  }
 }
+@media (min-width: 1100px) {
+  .islands {
+    &__card {
+      width: 30%;
+    }
+  }
 }
