@@ -471,7 +471,7 @@ body {
     right: 50px;
   }
   .header {
-    background-image: $blue-gradient url(../img/bora_1920.jpg);
+    background-image: $blue-gradient, url(../img/bora_1920.jpg);
     &__title {
       font-size: 8rem;
     }
