@@ -357,6 +357,109 @@ body {
   }
 }
 
+
+//REVIEWS
+
+@media(max-width:767px){
+  .reviews.section-padding{
+    padding: 6em 0;
+  }
+}
+
+
+.reviews{
+  &__box{
+    position: relative;
+    margin: 2em;
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 3px 3px 10px #2e2e2e;
+    transition: transform .3s;
+
+    &:hover{
+      transform: scale(.95);
+    }
+
+  }
+  &__box-img{
+    position: absolute;
+    top: 10%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+
+    img{
+      width: 80px;
+      height: 80px;
+     object-fit: cover;
+     border-radius: 50%;
+    }
+  }
+  &__box-quote{
+    margin-bottom: 1em;
+    font-size: 3em;
+    color: $main-color;
+  }
+  &__box-text{
+    margin-bottom: 1em;
+    font-size: 1.4rem;
+    color: $dark;
+  }
+
+
+}
+
+//CONTACT
+
+.contact {
+  position: relative;
+  background-color: $light-white;
+  overflow: hidden;
+
+  .white-block-left{
+    background-color: $dark;
+
+  }
+  &__form, &__form-top{
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__form-label{
+    margin-bottom: 0.5em;
+    text-transform: uppercase;
+  }
+  &__form-input{
+    @include contactForm;
+  }
+  &__form-textarea{
+    @include contactForm;
+
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 150px;
+  }
+  &__form-btn{
+    align-self: flex-end;
+    padding: 1em;
+    width: 100%;
+    max-width: 300px;
+    color: $pure-white;
+    border: none;
+    border-radius: 8px;
+    background-color: $main-color;
+    &::before{
+      background-color: $secondary-color;
+    }
+  }
+}
+
+
+
+
+
+
+
+
 //==========
 //Media
 //==========
