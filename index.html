@@ -188,7 +188,7 @@
           <div class="offers__box">
             <div class="offers__option">
               <img
-                src="img/bubbles1_640.jpg"
+                src="./img/bubbles1_640.jpg"
                 alt="dzieci z bąbelkami"
                 class="offers__option-img"
               />
@@ -209,7 +209,7 @@
             </div>
             <div class="offers__option">
               <img
-                src="/img/beach3f_640.jpg"
+                src="./img/beach3f_640.jpg"
                 alt="winko"
                 class="offers__option-img offers__option-img--right"
               />
@@ -230,7 +230,7 @@
             </div>
             <div class="offers__option">
               <img
-                src="/img/bonfire3_640.jpg"
+                src="./img/bonfire3_640.jpg"
                 alt="ognisko"
                 class="offers__option-img"
               />
@@ -312,41 +312,104 @@
         </div>
       </section>
 
-      <div
-        class="contact section-padding section white-section"
-        id="contact"
-      >
+      <div class="contact section-padding section white-section" id="contact">
+        <div class="white-block white-block-left"></div>
+        <div class="white-block white-block-right"></div>
 
-      <div class="white-block white-block-left"></div>
-      <div class="white-block white-block-right"></div>
+        <h2 class="section-heading">Kontakt</h2>
 
-      <h2 class="section-heading">Kontakt</h2>
+        <div class="wrapper">
+          <form class="contact__form">
+            <div class="contact__form-top">
+              <label for="name" class="contact__form-label"
+                >Imie i nazwisko:</label
+              >
+              <input type="text" class="contact__form-input" id="name" />
 
-      <div class="wrapper">
-        <form class="contact__form">
-          <div class="contact__form-top">
-            <label for="name" class="contact__form-label"
-              >Imie i nazwisko:</label
+              <label for="email" class="contact__form-label"
+                >Adres e-mail:</label
+              >
+              <input type="text" class="contact__form-input" id="email" />
+            </div>
+
+            <label for="msg" class="contact__form-label">Wiadmość</label>
+
+            <textarea
+              class="contact__form-textarea"
+              id="msg"
+              name=""
+              id=""
+              cols="30"
+              rows="10"
+            ></textarea>
+
+            <button
+              type="submit"
+              class="contact__form-btn btn-special-animation"
             >
-            <input type="text" class="contact__form-input" id="name" />
-
-            <label for="email" class="contact__form-label">Adres e-mail:</label>
-            <input type="text" class="contact__form-input" id="email" />
-          </div>
-
-          <label for="msg" class="contact__form-label">Wiadmość</label>
-
-          <textarea class="contact__form-textarea" id="msg" name="" id="" cols="30" rows="10"></textarea>
-
-          <button type="submit" class="contact__form-btn btn-special-animation">
-            Wyślij
-          </button>
-        </form>
+              Wyślij
+            </button>
+          </form>
+        </div>
       </div>
-    </div>
     </main>
 
-    <footer class="footer"></footer>
+    <footer class="footer">
+      <div class="wrapper">
+        <div class="footer__boxes">
+          <div class="footer__box">
+            <h3 class="footer__box-title">
+              <i class="fa fa-kiwi-bird">TP Co.</i>
+            </h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam
+              ullam nobis harum dolorem tempore error ratione iure, iusto
+              explicabo aperiam!
+            </p>
+            <div class="footer__box-social">
+              <a href="#" class="footer__box-link"
+                ><i class="fav fa-twitter-square"></i></a
+              ><a href="#" class="footer__box-link"
+                ><i class="fav fa-facebook-square"></i></a
+              ><a href="#" class="footer__box-link"
+                ><i class="fav fa-instagram"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="footer__box footer__box-desktop">
+            <h3 class="footer__box-title">Wyspy</h3>
+            <ul class="footer__box-list">
+              <li class="footer__box-list-item">
+                <a href="#">Wyspa Marfona</a>
+              </li>
+              <li class="footer__box-list-item">
+                <a href="#">Wyspa Darczixa</a>
+              </li>
+              <li class="footer__box-list-item">
+                <a href="#">Wyspa Dziewsona</a>
+              </li>
+              <li class="footer__box-list-item">
+                <a href="#">Pozosta Wyspy</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer__box footer__box-desktop">
+            <h3 class="footer__box-title">O firmie</h3>
+            <ul class="footer__box-list">
+              <li class="footer__box-list-item"><a href="#">O nas</a></li>
+              <li class="footer__box-list-item"><a href="#">Zarzad</a></li>
+              <li class="footer__box-list-item"><a href="#">Kariera</a></li>
+              <li class="footer__box-list-item"><a href="#">FAQ</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <p class="footer__bottom-text">
+        &copy; <span class="footer__year"></span> Tropical Islands
+      </p>
+    </footer>
 
     <script
       type="text/javascript"

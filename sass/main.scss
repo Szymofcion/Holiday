@@ -17,6 +17,7 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
+
 //nav
 
 .burger-btn {
@@ -116,6 +117,13 @@ body {
 .nav-items-animation {
   animation: navItemsAnimation 1s both;
 }
+
+.black-bars-color,
+.black-bars-color::after,
+.black-bard-color::before{
+background-color:$dark ;
+}
+
 
 //header
 
@@ -454,7 +462,47 @@ body {
 }
 
 
+//FOOTER
+.footer{
+  color: $pure-white;
+  background-color: $dark;
 
+  .wrapper{
+    padding: 6em 2em 2em;
+  }
+  &__box{
+    font-size: 1.4rem;
+  }
+  &__box-desktop{
+    display: none;
+  }
+  &__box-title{
+    margin-bottom: 1em;
+    font-size: 3rem;
+    text-transform: uppercase;
+  }
+  &__box-social{
+    margin: 2em 0 1em;
+  }
+  &__box-link{
+    padding: 0 .3em;
+    color: $pure-white;
+    font-size: 3.6rem;
+    text-decoration: none;
+    transition: color ,3s;
+
+    &:first-child{
+      padding-left: 0;
+    }
+    &:hover{
+      color: $light-white;
+    }
+  }
+  &__bottom-text{
+    padding: 2em;
+    text-align: center;
+  }
+}
 
 
 
@@ -519,6 +567,7 @@ body {
       }
     }
   }
+
 }
 
 @media (min-width: 768px) {
@@ -565,6 +614,37 @@ body {
     &__card {
       margin: 1em;
       width: 45%;
+    }
+  }
+  .footer{
+    &__boxes{
+      display: flex;
+      justify-content: space-between;
+    }
+    &__box-desktop{
+      display: block;
+    }
+    &__box{
+      margin: 0 2em;
+      width: 25%;
+
+      &:first-child{
+        width: 50%;
+      }
+    }
+    &__box-title{
+      font-size: 2.4rem;
+    }
+    &__box-list{
+      list-style: none;
+    }
+    &__box-list-item{
+      margin-bottom: 1em;
+
+      a{
+        color: $light-white;
+        text-decoration: none;
+      }
     }
   }
 }
